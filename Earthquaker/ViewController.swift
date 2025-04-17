@@ -1,19 +1,25 @@
-//
-//  ViewController.swift
-//  Earthquaker
-//
-//  Created by Michael Favre on 15/04/2025.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+var customView: CustomView!
+
+    override func loadView() {
+        let view = UIView()
+        view.backgroundColor = .red
+        self.view = view
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        customView = CustomView(frame: self.view.bounds)
+        self.view.addSubview(customView)
+
+    }
 }
 
