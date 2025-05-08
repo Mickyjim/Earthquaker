@@ -1,20 +1,22 @@
 import UIKit
 
 protocol HomeViewControllerProtocol: AnyObject {
-    var interacter: HomeInteracterProtocol? { get set }
-    func updateView()
+    func display()
 }
 
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
 
-    var interacter: HomeInteracterProtocol?
+    var interactor: HomeInteractorProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.load()
+        view.backgroundColor = .red
     }
 }
 
 extension HomeViewController {
-    func updateView() {
+    func display() {
+        
     }
 }

@@ -1,20 +1,25 @@
 import Foundation
 
-protocol HomeInteracterProtocol: AnyObject {
-    var presenter: HomePresenterProtocol? { get set }
-    func fetchData()
+protocol HomeInteractorProtocol: AnyObject {
+    func load()
+    func update()
 }
 
-class HomeInteracter: HomeInteracterProtocol {
-    var presenter: HomePresenterProtocol?
-    
-    func fetchData() {
-        
+class HomeInteractor: HomeInteractorProtocol {
+
+    var presenter: HomePresenterProtocol
+
+    init(presenter: HomePresenterProtocol) {
+        self.presenter = presenter
     }
 }
 
-extension HomeInteracterProtocol {
-    func fetchData() {
-        
+extension HomeInteractorProtocol {
+    func load() {
+
+    }
+
+    func update() {
+
     }
 }

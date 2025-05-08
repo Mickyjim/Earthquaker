@@ -1,15 +1,30 @@
 import Foundation
 
 protocol HomePresenterProtocol: AnyObject {
-    var view: HomeViewControllerProtocol? { get set }
-    var router: HomeRouterProtocol? { get set }
+    func show()
+    func showUpdate()
 }
 
 class HomePresenter: HomePresenterProtocol {
-    weak var view: HomeViewControllerProtocol?
-    var router: HomeRouterProtocol?
+
+    weak var view: HomeViewControllerProtocol!
+    var router: HomeRouterProtocol
+
+    init(
+        view: HomeViewControllerProtocol,
+        router: HomeRouterProtocol
+    ) {
+        self.view = view
+        self.router = router
+    }
 }
 
 extension HomePresenterProtocol {
-    
+    func show() {
+
+    }
+
+    func showUpdate() {
+
+    }
 }
